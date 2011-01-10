@@ -12,9 +12,11 @@ include mcollective::server
 To include the command line utilities (mc-*):
 include mcollective::client
 
-The is an additional mcollective::mongodb class that you can include on a host to act as an registration receiver with MongoDB. See:
+There is an additional mcollective::mongodb class that you can include on a host to act as an registration receiver with MongoDB. See:
 - http://www.devco.net/archives/2010/09/18/puppet_search_engine_with_mcollective.php
-- http://projects.puppetlabs.com/projects/mcollective-plugins/wiki/AgentRegistrationMongoDB  
+- http://projects.puppetlabs.com/projects/mcollective-plugins/wiki/AgentRegistrationMongoDB
+
+All classes provide default parameters (mcollective_*) that can be overridden to suit the environment.
 
 == Requires ==
 - Depends on concat module, available here:
