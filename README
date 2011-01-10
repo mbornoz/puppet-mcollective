@@ -18,6 +18,9 @@ There is an additional mcollective::mongodb class that you can include on a host
 
 All classes provide default parameters (mcollective_*) that can be overridden to suit the environment.
 
+Currently this module assumes that you have configured apt/yum sources for the mcollective packages. Will update soon with a solution to that
+but it will require additional module dependencies.
+
 == Requires ==
 - Depends on concat module, available here:
   https://github.com/ripienaar/puppet-concat
