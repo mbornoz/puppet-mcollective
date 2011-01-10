@@ -2,7 +2,7 @@
 
 Author: Atha Kouroussis <athak@vurbia.com> -  athak on Twitter.
 
-A Comprehensive (as far as possible) puppet module for deploying and managing mcollective.
+A Comprehensive (as far as possible) puppet module for deploying and managing mcollective. Supports Debian/Ubuntu and Redhat/CentOS(not tested yet)
 
 == Usage ==
 
