@@ -1,3 +1,31 @@
-mcollective
+= MCollective Puppet module =
 
-This is the mcollective module.
+Author: Atha Kouroussis <athak@vurbia.com> -  athak on Twitter.
+
+A Comprehensive (as far as possible) puppet module for deploying and managing mcollective.
+
+== Usage ==
+
+To make a host member of a Collective:
+include mcollective::server
+
+To include the command line utilities (mc-*):
+include mcollective::client
+
+The is an additional mcollective::mongodb class that you can include on a host to act as an registration receiver with MongoDB. See:
+- http://www.devco.net/archives/2010/09/18/puppet_search_engine_with_mcollective.php
+- http://projects.puppetlabs.com/projects/mcollective-plugins/wiki/AgentRegistrationMongoDB  
+
+== Requires ==
+- Depends on concat module, available here:
+  https://github.com/ripienaar/puppet-concat
+- Depends on ruby module, available here:
+  https://github.com/vurbia/puppet-ruby
+- Depends on mcollective-plugins repository available under /files/plugins
+  https://github.com/puppetlabs/mcollective-plugins
+  Its is configured as git submodule that has to be manually initialized with:
+  git submodule init
+  git submodule update
+
+
+All contributions and suggestions are welcome!
