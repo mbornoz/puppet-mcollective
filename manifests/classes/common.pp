@@ -12,20 +12,20 @@ class mcollective::common {
 		group  => root
 	}
 	
-	package { mcollective-common:
+	package { "mcollective-common":
 		ensure  => latest,
 		require => Class["ruby::stomp"]
 	}
 	
 	file { "${mcollective::conf_dir}":
 		ensure  => directory,
-		require => Package[mcollective-common]
+		require => Package["mcollective-common"]
 	}
 	
 	# ensure only files managed by puppet be present in this directory.
 	file { "${mcollective::plugin_dir}/mcollective":
 		ensure  => directory,
-		require => Package[mcollective-common]
+		require => Package["mcollective-common"]
 	}
 	
 	file { "${mcollective::agent_dir}":

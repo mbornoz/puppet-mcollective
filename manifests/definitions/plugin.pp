@@ -5,7 +5,6 @@
 define mcollective::plugin ($ensure = present, $core = false, $type, $ddl = false, $config = false, 
 							$source = "", $target = "", $ddl_source = "", $ddl_target = "",
 							$config_source = "", $config_target = "${mcollective::conf_dir}/server.cfg", $config_order = 99) {
-	alert("mcolllective::plugin name is ${name} and type ${type}")
 	
 	if ( $source == "" ) { 
 		$real_source = "puppet:///modules/mcollective/plugins/${type}/${name}/${name}.rb"

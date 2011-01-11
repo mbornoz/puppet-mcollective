@@ -4,7 +4,6 @@
 #
 define mcollective::plugin::cli ($ensure = present, $core = false, $type, $ddl = false,
 								 $source = "", $target = "", $ddl_source = "", $ddl_target = "") {
-	alert("mcolllective::plugin::cli name is ${name} and type ${type}")
 	
 	if ( $source == "" ) { 
 		$real_source = "puppet:///modules/mcollective/plugins/${type}/${name}/mc-${name}"
