@@ -1,16 +1,16 @@
-# Class: mcollective::server::config
+# Class: mcollective::node::config
 #
 #
-class mcollective::server::config {
+class mcollective::node::config {
 	# Setup concat module
 	include concat::setup
 	
-	# Setup server config file for concat module and include first fragment
+	# Setup node config file for concat module and include first fragment
 	concat { "${mcollective::conf_dir}/server.cfg":
 		owner   => root,
 		group   => root,
-		require => [ File["$mcollective::conf_dir"], Class["mcollective::server::install"], Class["mcollective::common"] ], 
-		notify  => Class["mcollective::server::service"]
+		require => [ File["$mcollective::conf_dir"], Class["mcollective::node::install"], Class["mcollective::common"] ], 
+		notify  => Class["mcollective::node::service"]
 	}
 	
 	concat::fragment { "mcollective-server.cfg-base":

@@ -7,7 +7,7 @@ A Comprehensive (as far as possible) puppet module for deploying and managing mc
 == Usage ==
 
 To make a host member of a Collective:
-include mcollective::server
+include mcollective::node
 
 To include the command line utilities (mc-*):
 include mcollective::client

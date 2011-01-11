@@ -2,10 +2,8 @@
 #
 #
 class mcollective::plugins::base inherits mcollective {
-	File {
+	Mcollective::Plugin {
 		require => [ Class["mcollective::common"] ],
-		owner   => root,
-		group   => root,
-		notify  => Class["mcollective::server::service"]
+		notify  => Class["mcollective::node::service"]
 	}
 }

@@ -1,12 +1,20 @@
 import "classes/*.pp"
+import "classes/cli/*.pp"
+import "classes/cli/agent/*.pp"
+import "classes/cli/util/*.pp"
 import "classes/client/*.pp"
 import "classes/plugins/*.pp"
 import "classes/plugins/agent/*.pp"
+import "classes/plugins/agent/registration/*.pp"
 import "classes/plugins/connector/*.pp"
+import "classes/plugins/connector/stomp/*.pp"
 import "classes/plugins/facts/*.pp"
 import "classes/plugins/registration/*.pp"
 import "classes/plugins/security/*.pp"
-import "classes/server/*.pp"
+import "classes/plugins/security/psk/*.pp"
+import "classes/node/*.pp"
+import "definitions/*.pp"
+import "definitions/plugin/*.pp"
 
 # Class: mcollective
 #
@@ -23,9 +31,10 @@ import "classes/server/*.pp"
 class mcollective {
 	$conf_dir         = "/etc/mcollective"
 	case $operatingsystem {
-        debian,ubuntu: { $plugin_dir = "/usr/share/mcollective/plugins" }
-        redhat,centos: { $plugin_dir = "/usr/libexec/mcollective" }
+        /(?i)(ubuntu|debian)/: { $plugin_dir = "/usr/share/mcollective/plugins" }
+        /(?i)(redhat|centos)/: { $plugin_dir = "/usr/libexec/mcollective" }
     }
+
 	$agent_dir        = "${plugin_dir}/mcollective/agent"
 	$audit_dir        = "${plugin_dir}/mcollective/audit"
 	$connector_dir    = "${plugin_dir}/mcollective/connector"
