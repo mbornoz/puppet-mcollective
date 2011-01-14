@@ -3,8 +3,7 @@
 # arguments
 #
 define mcollective::plugin::cli ($ensure = present, $core = false, $type, $ddl = false,
-								 $source = "", $target = "", $ddl_source = "", $ddl_target = "") {
-	
+								 $source = "", $target = "", $ddl_source = "", $ddl_target = "") {	
 	if ( $source == "" ) { 
 		$real_source = "puppet:///modules/mcollective/plugins/${type}/${name}/mc-${name}"
 	} else {

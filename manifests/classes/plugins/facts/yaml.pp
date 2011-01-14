@@ -12,7 +12,7 @@ class mcollective::plugins::facts::yaml inherits mcollective::plugins::base {
 	
 	file { "${mcollective::conf_dir}/facts.yaml":
 		ensure  => present,
-		source  => template("mcollective/plugins/facts/facts.yaml.erb"),
+		content => template("mcollective/plugins/facts/facts.yaml.erb"),
 		mode    => 644
 	}
 }

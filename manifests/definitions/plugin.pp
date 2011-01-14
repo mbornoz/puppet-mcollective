@@ -5,7 +5,6 @@
 define mcollective::plugin ($ensure = present, $core = false, $type, $ddl = false, $config = false, 
 							$source = "", $target = "", $ddl_source = "", $ddl_target = "",
 							$config_source = "", $config_target = "${mcollective::conf_dir}/server.cfg", $config_order = 99) {
-	
 	if ( $source == "" ) { 
 		$real_source = "puppet:///modules/mcollective/plugins/${type}/${name}/${name}.rb"
 	} else {
