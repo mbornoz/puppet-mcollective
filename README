@@ -26,6 +26,10 @@ but it will require additional module dependencies.
   https://github.com/ripienaar/puppet-concat
 - Depends on ruby module, available here:
   https://github.com/vurbia/puppet-ruby
+- Depends on apt module, available here:
+  https://github.com/vurbia/puppet-apt
+- Depends on yum module, available here:
+  https://github.com/vurbia/puppet-yum
 - Depends on mcollective-plugins repository available under /files/plugins
   https://github.com/puppetlabs/mcollective-plugins
   Its is configured as git submodule that has to be manually initialized with:
