@@ -3,6 +3,7 @@
 #
 class mcollective::client::install {
 	package { mcollective-client:
-		ensure => latest
+		ensure  => latest,
+		require => Class[$repo]
 	}
 }

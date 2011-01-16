@@ -31,8 +31,17 @@ import "definitions/plugin/*.pp"
 class mcollective {
 	$conf_dir         = "/etc/mcollective"
 	case $operatingsystem {
-        /(?i)(ubuntu|debian)/: { $plugin_dir = "/usr/share/mcollective/plugins" }
-        /(?i)(redhat|centos)/: { $plugin_dir = "/usr/libexec/mcollective" }
+        /(?i)(Debian|Ubuntu)/: {
+			$plugin_dir = "/usr/share/mcollective/plugins"
+			$repo       = "apt::repo::puppetlabs::main"
+		}
+        /(?i)(Redhat|Centos)/: {
+			$plugin_dir = "/usr/libexec/mcollective"
+			$repo       = "yum::repo::puppetlabs::base"
+		}
+		default: {
+			fail("${hostname}: mcollective module does not support ${operatingsystem} yet")
+		}
     }
 
 	$agent_dir        = "${plugin_dir}/mcollective/agent"

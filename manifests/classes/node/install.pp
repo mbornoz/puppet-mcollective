@@ -4,6 +4,7 @@
 class mcollective::node::install {
 	
 	package { mcollective:
-		ensure  => latest
+		ensure  => latest,
+		require => Class[$repo]
 	}
 }
