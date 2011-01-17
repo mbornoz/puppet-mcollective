@@ -3,6 +3,7 @@ import "classes/cli/*.pp"
 import "classes/cli/agent/*.pp"
 import "classes/cli/util/*.pp"
 import "classes/client/*.pp"
+import "classes/mongodb/*.pp"
 import "classes/node/*.pp"
 import "classes/plugins/*.pp"
 import "classes/plugins/agent/*.pp"
@@ -32,12 +33,14 @@ class mcollective {
 	$conf_dir         = "/etc/mcollective"
 	case $operatingsystem {
         /(?i)(Debian|Ubuntu)/: {
-			$plugin_dir = "/usr/share/mcollective/plugins"
-			$repo       = "apt::repo::puppetlabs::main"
+			$plugin_dir      = "/usr/share/mcollective/plugins"
+			$repo            = "apt::repo::puppetlabs::main"
+			$ruby_puppet_dir = "/usr/lib/ruby/1.8/puppet"
 		}
         /(?i)(Redhat|Centos)/: {
-			$plugin_dir = "/usr/libexec/mcollective"
-			$repo       = "yum::repo::puppetlabs::base"
+			$plugin_dir      = "/usr/libexec/mcollective"
+			$repo            = "yum::repo::puppetlabs::base"
+			$ruby_puppet_dir = "/usr/lib/ruby/site_ruby/1.8/puppet"
 		}
 		default: {
 			fail("${hostname}: mcollective module does not support ${operatingsystem} yet")
