@@ -2,9 +2,8 @@
 #
 #
 class mcollective::node::install {
-	
 	package { mcollective:
 		ensure  => latest,
-		require => Class[$repo]
+		require => $mcollective::params::pkg_deps
 	}
 }

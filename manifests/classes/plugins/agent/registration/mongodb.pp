@@ -2,10 +2,6 @@
 #
 #
 class mcollective::plugins::agent::registration::mongodb inherits mcollective::plugins::base {
-	if ( ! $mcollective_registration_mongohost )  { $mcollective_registration_mongohost = "localhost" }
-	if ( ! $mcollective_registration_mongohdb )   { $mcollective_registration_mongodb = "puppet" }
-	if ( ! $mcollective_registration_collection ) { $mcollective_registration_collection = "nodes" }
-	
 	mcollective::plugin { "registration":
 		ensure        => present,
 		type          => "agent",

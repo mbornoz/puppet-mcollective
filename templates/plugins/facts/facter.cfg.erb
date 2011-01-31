@@ -1,5 +1,5 @@
 # facter facts
 factsource = facter
-plugin.facter.facterlib = <%= mcollective_facter_facterlib %>
-plugin.facter.cache_time = <%= mcollective_facter_cache_time %>
+plugin.facter.facterlib = <%= scope.lookupvar('mcollective::params::facter_facterlib') %>
+plugin.facter.cache_time = <%= scope.lookupvar('mcollective::params::facter_cache_time') %>
 

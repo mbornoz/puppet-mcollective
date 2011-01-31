@@ -1,4 +1,4 @@
 # YAML facts
 factsource = yaml
-plugin.yaml = /etc/mcollective/facts.yaml
+plugin.yaml = <%= scope.lookupvar('mcollective::params::conf_dir') %>/facts.yaml
 

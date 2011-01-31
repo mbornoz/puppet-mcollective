@@ -1,7 +1,7 @@
 # Puppet plugin
-classesfile              = <%= mcollective_classesfile %>
-plugin.puppetd.puppetd   = <%= mcollective_puppetd_puppetd %>
-plugin.puppetd.lockfile  = <%= mcollective_puppetd_lockfile %>
-plugin.puppetd.statefile = <%= mcollective_puppetd_statefile %>
-plugin.puppetd.splaytime = <%= mcollective_puppetd_splaytime %>
+classesfile              = <%= scope.lookupvar('mcollective::params::classesfile') %>
+plugin.puppetd.puppetd   = <%= scope.lookupvar('mcollective::params::puppetd_puppetd') %>
+plugin.puppetd.lockfile  = <%= scope.lookupvar('mcollective::params::puppetd_lockfile') %>
+plugin.puppetd.statefile = <%= scope.lookupvar('mcollective::params::puppetd_statefile') %>
+plugin.puppetd.splaytime = <%= scope.lookupvar('mcollective::params::puppetd_splaytime') %>
 

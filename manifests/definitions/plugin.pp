@@ -4,7 +4,7 @@
 #
 define mcollective::plugin ($ensure = present, $core = false, $type, $ddl = false, $config = false, 
 							$source = "", $target = "", $ddl_source = "", $ddl_target = "",
-							$config_source = "", $config_target = "${mcollective::conf_dir}/server.cfg", $config_order = 99) {
+							$config_source = "", $config_target = "${mcollective::params::conf_dir}/server.cfg", $config_order = 99) {
 	if ( $source == "" ) { 
 		$real_source = "puppet:///modules/mcollective/plugins/${type}/${name}/${name}.rb"
 	} else {
@@ -12,7 +12,7 @@ define mcollective::plugin ($ensure = present, $core = false, $type, $ddl = fals
 	}
 	
 	if ( $target == "" ) { 
-		$real_target = "${mcollective::plugin_dir}/mcollective/${type}/${name}.rb"
+		$real_target = "${mcollective::params::plugin_dir}/mcollective/${type}/${name}.rb"
 	} else {
 		$real_target = $target
 	}
@@ -24,7 +24,7 @@ define mcollective::plugin ($ensure = present, $core = false, $type, $ddl = fals
 	}
 	
 	if ( $ddl_target == "" ) { 
-		$ddl_real_target = "${mcollective::plugin_dir}/mcollective/${type}/${name}.ddl"
+		$ddl_real_target = "${mcollective::params::plugin_dir}/mcollective/${type}/${name}.ddl"
 	} else {
 		$ddl_real_target = $ddl_target
 	}

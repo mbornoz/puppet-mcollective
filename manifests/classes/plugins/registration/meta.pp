@@ -2,8 +2,6 @@
 #
 #
 class mcollective::plugins::registration::meta inherits mcollective::plugins::base {
-	if ( ! $mcollective_registerinterval )  { $mcollective_registerinterval = "300" }
-	
 	mcollective::plugin { "meta":
 		ensure       => present,
 		type         => "registration",

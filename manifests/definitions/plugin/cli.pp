@@ -23,7 +23,7 @@ define mcollective::plugin::cli ($ensure = present, $core = false, $type, $ddl =
 	}
 	
 	if ( $ddl_target == "" ) { 
-		$ddl_real_target = "${mcollective::plugin_dir}/mcollective/${type}/${name}.ddl"
+		$ddl_real_target = "${mcollective::params::plugin_dir}/mcollective/${type}/${name}.ddl"
 	} else {
 		$ddl_real_target = $ddl_target
 	}

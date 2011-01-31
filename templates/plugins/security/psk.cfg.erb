@@ -1,4 +1,4 @@
 # security plugin config
 securityprovider = psk
-plugin.psk = <%= mcollective_psk_password %>
+plugin.psk = <%= scope.lookupvar('mcollective::params::psk_password') %>
 

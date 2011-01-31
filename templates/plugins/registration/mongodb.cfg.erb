@@ -1,5 +1,5 @@
 # mongoDB registration plugin
-plugin.registration.mongohost = <%= mcollective_registration_mongohost %>
-plugin.registration.mongodb = <%= mcollective_registration_mongodb %>
-plugin.registration.collection = <%= mcollective_registration_collection %>
+plugin.registration.mongohost = <%= scope.lookupvar('mcollective::params::registration_mongohost') %>
+plugin.registration.mongodb = <%= scope.lookupvar('mcollective::params::registration_mongodb') %>
+plugin.registration.collection = <%= scope.lookupvar('mcollective::params::registration_collection') %>
 

@@ -9,7 +9,7 @@ class mcollective::plugins::standard {
 	include mcollective::plugins::agent::puppetd
 	include mcollective::plugins::agent::service
 	
-	if ( $mcollective_registration == "true" ) {
+	if ( $mcollective::params::registration ) {
 		include mcollective::plugins::registration::meta
 	}
 }

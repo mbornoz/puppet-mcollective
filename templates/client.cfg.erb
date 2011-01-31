@@ -1,7 +1,7 @@
 # main config
-topicprefix = <%= mcollective_topic_prefix %>
-libdir = <%= scope.lookupvar('mcollective::plugin_dir') %>
-logfile = /dev/null
-loglevel = debug
+topicprefix = <%= scope.lookupvar('mcollective::params::topicprefix') %>
+libdir = <%= scope.lookupvar('mcollective::params::plugin_dir') %>
+logfile = <%= scope.lookupvar('mcollective::params::client_logfile') %>
+loglevel = <%= scope.lookupvar('mcollective::params::client_loglevel') %>
 identity = <%= fqdn %>
 

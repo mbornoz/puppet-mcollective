@@ -1,7 +1,7 @@
 # connector plugin config
 connector = stomp
-plugin.stomp.host = <%= mcollective_stomp_host %>
-plugin.stomp.port = <%= mcollective_stomp_port %>
-plugin.stomp.user = <%= mcollective_stomp_user %>
-plugin.stomp.password = <%= mcollective_stomp_password %>
+plugin.stomp.host = <%= scope.lookupvar('mcollective::params::stomp_host') %>
+plugin.stomp.port = <%= scope.lookupvar('mcollective::params::stomp_port') %>
+plugin.stomp.user = <%= scope.lookupvar('mcollective::params::stomp_user') %>
+plugin.stomp.password = <%= scope.lookupvar('mcollective::params::stomp_password') %>
 

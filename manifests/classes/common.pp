@@ -2,8 +2,7 @@
 # Common configuration class for mcollective and mcollective::client
 #
 class mcollective::common {
-	$stomp_version = "1.1.6"
-	include ruby::stomp
+	class { "ruby::stomp": version => $mcollective::params::stomp_version }
 	
 	File {
 		ensure => directory,
@@ -17,49 +16,49 @@ class mcollective::common {
 		require => Class["ruby::stomp"]
 	}
 	
-	file { "${mcollective::conf_dir}":
+	file { "${mcollective::params::conf_dir}":
 		ensure  => directory,
 		require => Package["mcollective-common"]
 	}
 	
 	# ensure only files managed by puppet be present in this directory.
-	file { "${mcollective::plugin_dir}/mcollective":
+	file { "${mcollective::params::plugin_dir}/mcollective":
 		ensure  => directory,
 		require => Package["mcollective-common"]
 	}
 	
-	file { "${mcollective::agent_dir}":
+	file { "${mcollective::params::agent_dir}":
 		ensure  => directory,
-		require => File["${mcollective::plugin_dir}/mcollective"]
+		require => File["${mcollective::params::plugin_dir}/mcollective"]
 	}
 	
-	file { "${mcollective::audit_dir}":
+	file { "${mcollective::params::audit_dir}":
 		ensure  => directory,
-		require => File["${mcollective::plugin_dir}/mcollective"]
+		require => File["${mcollective::params::plugin_dir}/mcollective"]
 	}
 	
-	file { "${mcollective::connector_dir}":
+	file { "${mcollective::params::connector_dir}":
 		ensure  => directory,
-		require => File["${mcollective::plugin_dir}/mcollective"]
+		require => File["${mcollective::params::plugin_dir}/mcollective"]
 	}
 	
-	file { "${mcollective::facts_dir}":
+	file { "${mcollective::params::facts_dir}":
 		ensure  => directory,
-		require => File["${mcollective::plugin_dir}/mcollective"]
+		require => File["${mcollective::params::plugin_dir}/mcollective"]
 	}
 	
-	file { "${mcollective::registration_dir}":
+	file { "${mcollective::params::registration_dir}":
 		ensure  => directory,
-		require => File["${mcollective::plugin_dir}/mcollective"]
+		require => File["${mcollective::params::plugin_dir}/mcollective"]
 	}
 	
-	file { "${mcollective::security_dir}":
+	file { "${mcollective::params::security_dir}":
 		ensure  => directory,
-		require => File["${mcollective::plugin_dir}/mcollective"]
+		require => File["${mcollective::params::plugin_dir}/mcollective"]
 	}
 	
-	file { "${mcollective::util_dir}":
+	file { "${mcollective::params::util_dir}":
 		ensure  => directory,
-		require => File["${mcollective::plugin_dir}/mcollective"]
+		require => File["${mcollective::params::plugin_dir}/mcollective"]
 	}
 }

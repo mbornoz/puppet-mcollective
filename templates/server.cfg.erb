@@ -1,12 +1,11 @@
 # file managed by puppet
 # main config
-topicprefix = <%= mcollective_topic_prefix %>
-libdir = <%= scope.lookupvar('mcollective::plugin_dir') %>
-logfile = /var/log/mcollective.log
-daemonize = 1
-keeplogs = 1
-max_log_size = 10240
-loglevel = debug
+topicprefix = <%= scope.lookupvar('mcollective::params::topicprefix') %>
+libdir = <%= scope.lookupvar('mcollective::params::plugin_dir') %>
+logfile = <%= scope.lookupvar('mcollective::params::node_logfile') %>
+daemonize = <%= scope.lookupvar('mcollective::params::node_daemonize') %>
+keeplogs = <%= scope.lookupvar('mcollective::params::node_keeplogs') %>
+max_log_size = <%= scope.lookupvar('mcollective::params::node_max_log_size') %>
+loglevel = <%= scope.lookupvar('mcollective::params::node_loglevel') %>
 identity = <%= fqdn %>
-registerinterval = 300
 

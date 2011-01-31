@@ -4,6 +4,6 @@
 class mcollective::client::install {
 	package { mcollective-client:
 		ensure  => latest,
-		require => Class[$repo]
+		require => $mcollective::params::pkg_deps
 	}
 }
