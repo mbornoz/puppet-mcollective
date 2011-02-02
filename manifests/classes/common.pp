@@ -2,8 +2,6 @@
 # Common configuration class for mcollective and mcollective::client
 #
 class mcollective::common {
-	class { "ruby::stomp": version => $mcollective::params::stomp_version }
-	
 	File {
 		ensure => directory,
 		mode   => 0755,

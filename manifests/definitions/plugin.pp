@@ -2,11 +2,33 @@
 # Parameters:
 # arguments
 #
-define mcollective::plugin ($ensure = present, $core = false, $type, $ddl = false, $config = false, 
+define mcollective::plugin ($ensure = present, $core = false, $type, $ddl = false, $config = false, $repo = "puppetlabs",
 							$source = "", $target = "", $ddl_source = "", $ddl_target = "",
 							$config_source = "", $config_target = "${mcollective::params::conf_dir}/server.cfg", $config_order = 99) {
-	if ( $source == "" ) { 
-		$real_source = "puppet:///modules/mcollective/plugins/${type}/${name}/${name}.rb"
+	if ( $source == "" ) {
+		case $repo {
+			"puppetlabs": {
+				$real_source = "puppet:///modules/mcollective/plugins/puppetlabs/${type}/${name}/${name}.rb"
+			}
+			"ripienaar": {
+				$real_source = "puppet:///modules/mcollective/plugins/ripienaar/${type}/${name}/${name}.rb"
+			}
+			"mstanislav": {
+				$real_source = "puppet:///modules/mcollective/plugins/mstanislav/${name}/${name}.rb"
+			}
+			"rottenbytes": {
+				$real_source = "puppet:///modules/mcollective/plugins/rottenbytes/plugins/agents/${name}.rb"
+			}
+			"jofu": {
+				$real_source = "puppet:///modules/mcollective/plugins/jofu/${name}.rb"
+			}
+			"jofu": {
+				$real_source = "puppet:///modules/mcollective/plugins/joemiller/${name}.rb"
+			}
+			default: {
+				fail("Unknown mcollective plugins repo ${repo} in module 'mcollective'")
+			}
+		}
 	} else {
 		$real_source = $source
 	}
@@ -18,7 +40,29 @@ define mcollective::plugin ($ensure = present, $core = false, $type, $ddl = fals
 	}
 	
 	if ( $ddl_source == "" ) { 
-		$ddl_real_source = "puppet:///modules/mcollective/plugins/${type}/${name}/${name}.ddl"
+		case $repo {
+			"puppetlabs": {
+				$ddl_real_source = "puppet:///modules/mcollective/plugins/puppetlabs/${type}/${name}/${name}.ddl"
+			}
+			"ripienaar": {
+				$ddl_real_source = "puppet:///modules/mcollective/plugins/ripienaar/${type}/${name}/${name}.ddl"
+			}
+			"mstanislav": {
+				$ddl_real_source = "puppet:///modules/mcollective/plugins/mstanislav/${name}/${name}.ddl"
+			}
+			"rottenbytes": {
+				$ddl_real_source = "puppet:///modules/mcollective/plugins/rottenbytes/plugins/agents/${name}.ddl"
+			}
+			"jofu": {
+				$ddl_real_source = "puppet:///modules/mcollective/plugins/jofu/${name}.ddl"
+			}
+			"joemiller": {
+				$ddl_real_source = "puppet:///modules/mcollective/plugins/joemiller/${name}.ddl"
+			}
+			default: {
+				fail("Unknown mcollective plugins repo ${repo} in module 'mcollective'")
+			}
+		}
 	} else {
 		$ddl_real_source = $ddl_source
 	}

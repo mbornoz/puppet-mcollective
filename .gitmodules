@@ -1,0 +1,18 @@
+[submodule "files/plugins/ripienaar"]
+	path = files/plugins/ripienaar
+	url = git://github.com/ripienaar/mcollective-plugins.git
+[submodule "files/plugins/puppetlabs"]
+	path = files/plugins/puppetlabs
+	url = git://github.com/puppetlabs/mcollective-plugins.git
+[submodule "files/plugins/mstanislav"]
+	path = files/plugins/mstanislav
+	url = git://github.com/mstanislav/mCollective-Agents.git
+[submodule "files/plugins/rottenbytes"]
+	path = files/plugins/rottenbytes
+	url = git://github.com/rottenbytes/mcollective.git
+[submodule "files/plugins/jofu"]
+	path = files/plugins/jofu
+	url = git://github.com/jofu/uam-agent.git
+[submodule "files/plugins/joemiller"]
+	path = files/plugins/joemiller
+	url = git://github.com/joemiller/shellcmd-agent.git

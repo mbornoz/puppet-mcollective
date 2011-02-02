@@ -6,8 +6,8 @@ class mcollective::plugins::agent::iptables inherits mcollective::plugins::base 
 	mcollective::plugin { "iptables":
 		ensure     => present,
 		type       => "agent",
-		source     => "puppet:///modules/mcollective/plugins/agent/iptables-junkfilter/iptables.rb",
+		source     => "puppet:///modules/mcollective/plugins/puppetlabs/agent/iptables-junkfilter/iptables.rb",
 		ddl        => true,
-		ddl_source => "puppet:///modules/mcollective/plugins/agent/iptables-junkfilter/iptables.ddl"
+		ddl_source => "puppet:///modules/mcollective/plugins/puppetlabs/agent/iptables-junkfilter/iptables.ddl"
 	}
 }

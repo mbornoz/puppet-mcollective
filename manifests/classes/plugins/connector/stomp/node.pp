@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::connector::stomp::node
 #
 #
-class mcollective::plugins::connector::stomp::node inherits mcollective::plugins::base {
+class mcollective::plugins::connector::stomp::node inherits mcollective::plugins::connector::stomp {
 	concat::fragment { "mcollective-server.cfg-connector-stomp":
 		target  => "${mcollective::params::conf_dir}/server.cfg",
 		order   => 15,

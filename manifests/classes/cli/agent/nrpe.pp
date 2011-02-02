@@ -1,4 +1,4 @@
-# Class: mcollective::cli::agent::filemgr
+# Class: mcollective::cli::agent::nrpe
 #
 #
 class mcollective::cli::agent::nrpe inherits mcollective::cli::base {

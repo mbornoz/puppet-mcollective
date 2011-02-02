@@ -56,25 +56,22 @@ class mcollective::params {
 	}
 	
 	$securityprovider = $mcollective_securityprovider ? {
-		""      => "psk",
-		default => $mcollective_securityprovider
+		"psk"    => "psk",
+		"none"   => "none",
+		"sshkey" => "sshkey",
+		default  => "psk"
 	}
 	
 	$factsource = $mcollective_factsource ? {
-		""      => "yaml",
-		default => $mcollective_factsource
+		"yaml"   => "yaml",
+		"facter" => "facter",
+		default  => "yaml"
 	}
 	
 	$registration = $mcollective_registration ? {
 		"true"  => true,
 		"false" => false,
 		default => false
-	}
-	
-	# Version of the ruby stomp gem
-	$stomp_version = $mcollective_stomp_version ? {
-		""      => "1.1.7",
-		default => $mcollective_stomp_version
 	}
 	
 	$node_daemonize = $mcollective_node_daemonize ? {
@@ -140,6 +137,18 @@ class mcollective::params {
 		default => $mcollective_puppetd_splaytime
 	}
 	
+	# VCSmgr agent plugin
+	$vcsmgr_svn = $mcollective_vcsmgr_svn ? {
+		""      => "/usr/bin/svn",
+		default => $mcollective_vcsmgr_svn
+	}
+	
+	# Spamassassin agent plugin
+	$spamassassin_compiled_ruleset = $mcollective_spamassassin_compiled_ruleset ? {
+		""      => "/var/lib/spamassassin/compiled/5.008/3.002005/Mail/SpamAssassin/CompiledRegexps/body_0.pm",
+		default => $mcollective_spamassassin_compiled_ruleset
+	}
+	
 	# mongoDB registration agent plugin
 	$registration_mongohost = $mcollective_registration_mongohost ? {
 		""      => "localhost",
@@ -177,15 +186,21 @@ class mcollective::params {
 		default => $mcollective_stomp_password
 	}
 	
+	# Version of the ruby stomp gem
+	$stomp_version = $mcollective_stomp_version ? {
+		""      => "1.1.7",
+		default => $mcollective_stomp_version
+	}
+	
 	# Facter facts plugin
 	$facter_facterlib = $mcollective_facter_facterlib ? {
 		""      => "/var/lib/puppet/lib/facter:/var/lib/puppet/facts",
 		default => $mcollective_facter_facterlib
 	}
 	
-	$facter_cache_time = $mcollective_facter_cache_time ? {
+	$fact_cache_time = $mcollective_fact_cache_time ? {
 		""      => "300",
-		default => $mcollective_facter_cache_time
+		default => $mcollective_fact_cache_time
 	}
 	
 	# Meta registration plugin
@@ -198,5 +213,11 @@ class mcollective::params {
 	$psk_password = $mcollective_psk_password ? {
 		""      => "defineme",
 		default => $mcollective_psk_password
+	}
+	
+	# SSH key security plugin
+	$sshkey = $mcollective_sshkey ? {
+		""      => "/etc/ssh/ssh_host_rsa_key",
+		default => $mcollective_sshkey
 	}
 }

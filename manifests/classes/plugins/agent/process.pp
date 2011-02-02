@@ -1,4 +1,4 @@
-# Class: mcollective::plugins::process
+# Class: mcollective::plugins::agent::process
 #
 #
 class mcollective::plugins::agent::process inherits mcollective::plugins::base {

@@ -7,6 +7,6 @@ class mcollective::cli::util::ssh inherits mcollective::cli::base {
 	mcollective::plugin::cli { "ssh":
 		ensure => present,
 		type   => util,
-		source => "puppet:///modules/mcollective/plugins/utilities/mc-ssh/mc-ssh-highline"
+		source => "puppet:///modules/mcollective/plugins/puppetlabs/utilities/mc-ssh/mc-ssh-highline"
 	}
 }

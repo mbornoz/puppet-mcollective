@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::connector::stomp::client
 #
 #
-class mcollective::plugins::connector::stomp::client inherits mcollective::plugins::base {
+class mcollective::plugins::connector::stomp::client inherits mcollective::plugins::connector::stomp {
 	concat::fragment { "mcollective-client.cfg-connector-stomp":
 		target  => "${mcollective::params::conf_dir}/client.cfg",
 		order   => 15,

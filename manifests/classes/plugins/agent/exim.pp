@@ -4,16 +4,13 @@
 class mcollective::plugins::agent::exim inherits mcollective::plugins::base {
 	mcollective::plugin { "exim":
 		ensure => present,
-		type   => "agent"
-	}
-	
-	mcollective::plugin { "eximclient":
-		ensure => present,
-		type   => "util"
+		type   => "agent",
+		repo   => "ripienaar"
 	}
 	
 	mcollective::plugin { "eximserver":
 		ensure => present,
-		type   => "util"
+		type   => "util",
+		source => "puppet:///modules/mcollective/plugins/ripienaar/agent/exim/util/eximserver.rb"
 	}
 }
