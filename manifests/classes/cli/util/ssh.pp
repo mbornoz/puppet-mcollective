@@ -1,7 +1,7 @@
 # Class: mcollective::cli::util::ssh
 #
 #
-class mcollective::cli::util::ssh inherits mcollective::cli::base {
+class mcollective::cli::util::ssh {
 	include ruby::highline
 	
 	mcollective::plugin::cli { "ssh":
