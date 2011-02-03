@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::agent::vcsmgr
 #
 #
-class mcollective::plugins::agent::vcsmgr inherits mcollective::plugins::base {
+class mcollective::plugins::agent::vcsmgr {
 	mcollective::plugin { "vcsmgr":
 		ensure       => present,
 		type         => "agent",

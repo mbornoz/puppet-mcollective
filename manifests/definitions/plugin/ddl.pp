@@ -12,7 +12,8 @@ define mcollective::plugin::ddl ($ensure = present, $source, $target) {
 					source => $source,
 					mode   => 644,
 					owner  => root,
-					group  => root
+					group  => root,
+					require => Class["mcollective::common"]
 				}
 			}
 			

@@ -78,9 +78,10 @@ define mcollective::plugin::cli ($ensure = present, $core = false, $type, $ddl =
 				present: {
 					if ( ! $core) {
 						file { $real_target:
-							ensure => present,
-							source => $real_source,
-							mode   => 755
+							ensure  => present,
+							source  => $real_source,
+							mode    => 755,
+							require => Class["mcollective::common"]
 						}
 					}
 					

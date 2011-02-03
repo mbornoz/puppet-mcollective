@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::security::none::node
 #
 #
-class mcollective::plugins::security::none::node inherits mcollective::plugins::base {
+class mcollective::plugins::security::none::node inherits mcollective::plugins::security::none {
 	include mcollective::plugins::security::none
 	
 	concat::fragment { "mcollective-server.cfg-security-none":

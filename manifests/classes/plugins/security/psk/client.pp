@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::security::psk::client
 #
 #
-class mcollective::plugins::security::psk::client inherits mcollective::plugins::base {
+class mcollective::plugins::security::psk::client {
 	concat::fragment { "mcollective-client.cfg-security-psk":
 		target  => "${mcollective::params::conf_dir}/client.cfg",
 		order   => 20,

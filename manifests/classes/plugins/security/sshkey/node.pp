@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::security::sshkey::node
 #
 #
-class mcollective::plugins::security::sshkey::node inherits mcollective::plugins::base {
+class mcollective::plugins::security::sshkey::node inherits mcollective::plugins::security::sshkey {
 	include mcollective::plugins::security::sshkey
 	
 	concat::fragment { "mcollective-server.cfg-security-sshkey":

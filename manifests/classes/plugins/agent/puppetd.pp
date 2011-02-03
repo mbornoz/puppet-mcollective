@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::agent::puppetd
 #
 #
-class mcollective::plugins::agent::puppetd inherits mcollective::plugins::base {
+class mcollective::plugins::agent::puppetd {
 	mcollective::plugin { "puppetd":
 		ensure       => present,
 		type         => "agent",

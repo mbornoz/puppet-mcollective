@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::security::none::client
 #
 #
-class mcollective::plugins::security::none::client inherits mcollective::plugins::base {
+class mcollective::plugins::security::none::client inherits mcollective::plugins::security::none {
 	include mcollective::plugins::security::none
 	
 	concat::fragment { "mcollective-client.cfg-security-none":

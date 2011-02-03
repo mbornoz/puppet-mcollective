@@ -1,7 +1,7 @@
 # Class: mcollective::cli::agent::nrpe
 #
 #
-class mcollective::cli::agent::nrpe inherits mcollective::cli::base {
+class mcollective::cli::agent::nrpe {
 	mcollective::plugin::cli { "nrpe":
 		ensure => present,
 		type   => agent,

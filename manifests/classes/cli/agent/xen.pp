@@ -1,7 +1,7 @@
 # Class: mcollective::cli::agent::xen
 #
 #
-class mcollective::cli::agent::xen inherits mcollective::cli::base {
+class mcollective::cli::agent::xen {
 	mcollective::plugin::cli { "xen":
 		ensure => present,
 		type   => agent,

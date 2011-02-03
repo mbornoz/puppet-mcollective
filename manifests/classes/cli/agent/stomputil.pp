@@ -1,7 +1,7 @@
 # Class: mcollective::cli::agent::stomputil
 #
 #
-class mcollective::cli::agent::stomputil inherits mcollective::cli::base {
+class mcollective::cli::agent::stomputil {
 	mcollective::plugin::cli { "stomputil":
 		ensure => present,
 		type   => agent,

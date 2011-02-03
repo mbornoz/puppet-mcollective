@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::registration::mongodb
 #
 #
-class mcollective::plugins::agent::registration::mongodb inherits mcollective::plugins::base {
+class mcollective::plugins::agent::registration::mongodb {
 	mcollective::plugin { "registration":
 		ensure        => present,
 		type          => "agent",

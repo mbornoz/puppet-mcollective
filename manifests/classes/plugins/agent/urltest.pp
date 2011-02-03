@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::agent::urltest
 #
 #
-class mcollective::plugins::agent::urltest inherits mcollective::plugins::base {
+class mcollective::plugins::agent::urltest {
 	mcollective::plugin { "urltest":
 		ensure => present,
 		type   => "agent",

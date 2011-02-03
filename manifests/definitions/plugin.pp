@@ -85,11 +85,12 @@ define mcollective::plugin ($ensure = present, $core = false, $type, $ddl = fals
 				present: {
 					if ( ! $core) {
 						file { $real_target:
-							ensure => present,
-							source => $real_source,
-							mode   => 644,
-							owner  => root,
-							group  => root
+							ensure  => present,
+							source  => $real_source,
+							mode    => 644,
+							owner   => root,
+							group   => root,
+							require => Class["mcollective::common"]
 						}
 					}
 					

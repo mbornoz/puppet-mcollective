@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::facts::yaml
 #
 #
-class mcollective::plugins::facts::yaml inherits mcollective::plugins::base {
+class mcollective::plugins::facts::yaml {
 	mcollective::plugin { "yaml":
 		ensure       => present,
 		core         => true,

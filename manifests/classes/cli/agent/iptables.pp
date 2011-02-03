@@ -1,7 +1,7 @@
 # Class: mcollective::cli::agent::iptables
 #
 #
-class mcollective::cli::agent::iptables inherits mcollective::cli::base {
+class mcollective::cli::agent::iptables {
 	mcollective::plugin::cli { "iptables":
 		ensure     => present,
 		type       => agent,

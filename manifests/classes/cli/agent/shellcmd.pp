@@ -1,7 +1,7 @@
 # Class: mcollective::cli::agent::shellcmd
 #
 #
-class mcollective::cli::agent::shellcmd inherits mcollective::cli::base {
+class mcollective::cli::agent::shellcmd {
 	mcollective::plugin::cli { "shellcmd":
 		ensure => present,
 		type   => agent,

@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::agent::xenagent
 #
 #
-class mcollective::plugins::agent::xenagent inherits mcollective::plugins::base {
+class mcollective::plugins::agent::xenagent {
 	include ruby::xen
 	
 	mcollective::plugin { "xenagent":

@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::agent::filemgr
 #
 #
-class mcollective::plugins::agent::filemgr inherits mcollective::plugins::base {
+class mcollective::plugins::agent::filemgr {
 	mcollective::plugin { "filemgr":
 		ensure     => present,
 		type       => "agent",

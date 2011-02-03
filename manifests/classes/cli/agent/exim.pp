@@ -1,7 +1,7 @@
 # Class: mcollective::cli::agent::exim
 #
 #
-class mcollective::cli::agent::exim inherits mcollective::cli::base {
+class mcollective::cli::agent::exim {
 	mcollective::plugin::cli { "exim":
 		ensure => present,
 		type   => agent,

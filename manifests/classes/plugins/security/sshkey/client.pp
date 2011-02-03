@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::security::sshkey::client
 #
 #
-class mcollective::plugins::security::sshkey::client inherits mcollective::plugins::base {
+class mcollective::plugins::security::sshkey::client inherits mcollective::plugins::security::sshkey {
 	include mcollective::plugins::security::sshkey
 	
 	concat::fragment { "mcollective-client.cfg-security-sshkey":

@@ -1,7 +1,7 @@
 # Class: mcollective::cli::agent::eximctl
 #
 #
-class mcollective::cli::agent::eximctl inherits mcollective::cli::base {
+class mcollective::cli::agent::eximctl {
 	mcollective::plugin::cli { "eximctl":
 		ensure => present,
 		type   => agent

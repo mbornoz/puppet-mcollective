@@ -1,7 +1,7 @@
 # Class: mcollective::cli::agent::service
 #
 #
-class mcollective::cli::agent::service inherits mcollective::cli::base {
+class mcollective::cli::agent::service {
 	mcollective::plugin::cli { "service":
 		ensure => present,
 		type   => agent,

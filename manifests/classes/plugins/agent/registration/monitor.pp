@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::agent::registration
 #
 #
-class mcollective::plugins::agent::registration::monitor inherits mcollective::plugins::base {
+class mcollective::plugins::agent::registration::monitor {
 	mcollective::plugin { "registration":
 		ensure => present,
 		type   => "agent",

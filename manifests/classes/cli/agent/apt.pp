@@ -1,7 +1,7 @@
 # Class: mcollective::cli::agent::apt
 #
 #
-class mcollective::cli::agent::apt inherits mcollective::cli::base {
+class mcollective::cli::agent::apt {
 	mcollective::plugin::cli { "apt":
 		ensure => present,
 		type   => agent,

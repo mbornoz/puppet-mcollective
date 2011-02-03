@@ -1,7 +1,7 @@
 # Class: mcollective::plugins::agent::iptables
 #
 #
-class mcollective::plugins::agent::iptables inherits mcollective::plugins::base {
+class mcollective::plugins::agent::iptables {
 	# TODO: require iptables and have junk filter rule
 	mcollective::plugin { "iptables":
 		ensure     => present,
