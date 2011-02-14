@@ -12,8 +12,8 @@ class mcollective::params {
 		/(?i)(Debian)/: {
 			$plugin_dir      = "/usr/share/mcollective/plugins"
 			$ruby_puppet_dir = "/usr/lib/ruby/1.8/puppet"
-			$pkg_deps = [ Class["apt"], Class["apt::backports"] ]
-			include apt, apt::backports
+			$pkg_deps = [ Class["apt"], Class["apt::backports"], Class["apt::repo::puppetlabs::main"] ]
+			include apt, apt::backports, apt::repo::puppetlabs::main
 		}
 		/(?i)(Redhat|CentOS)/: {
 			$plugin_dir      = "/usr/libexec/mcollective"
@@ -172,7 +172,7 @@ class mcollective::params {
 	}
 	
 	$stomp_port = $mcollective_stomp_port ? {
-		""      => "6163",
+		""      => "61613",
 		default => $mcollective_stomp_port
 	}
 	
