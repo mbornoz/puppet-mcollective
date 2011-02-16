@@ -6,8 +6,8 @@ class mcollective::params {
 		/(?i)(Ubuntu)/: {
 			$plugin_dir      = "/usr/share/mcollective/plugins"
 			$ruby_puppet_dir = "/usr/lib/ruby/1.8/puppet"
-			$pkg_deps = [ Class["apt"], Class["apt::repo::puppetlabs::main"], Class["apt::repo::brightbox::main"], Class["apt::repo::brightbox::rubyee"] ]
-			include apt, apt::repo::puppetlabs::main, apt::repo::brightbox::main, apt::repo::brightbox::rubyee
+			$pkg_deps = [ Class["apt"], Class["apt::repo::puppetlabs::main"] ]
+			include apt, apt::repo::puppetlabs::main
 		}
 		/(?i)(Debian)/: {
 			$plugin_dir      = "/usr/share/mcollective/plugins"
